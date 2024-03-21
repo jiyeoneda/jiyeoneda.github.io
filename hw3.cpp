@@ -1,38 +1,39 @@
 #include <iostream>
+#include<cmath>
 using namespace std;
 
 void main() {
 	float k, c, dt, t, num, anal;
 	//f(t) : log (k * t + c)
-	//¹ÌºÐ
-	cout << "k¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	//ë¯¸ë¶„
+	cout << "kë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> k;
-	cout << "c¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	cout << "cë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> c;
-	cout << "t¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	cout << "të¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> t;
-	cout << "dt¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	cout << "dtë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> dt;
 	anal =  k * (1 / (k * t + c));
 	num = (log(k * (t + dt) + c) - log(k * t + c))/ dt;
 	cout << "num: " << num << " anal: " << anal << endl;
-	cout << " error = " << (num - anal) / anal * 100 << "%\n";
-	//ÀûºÐ
+	cout << " error = " << abs(num - anal) / anal * 100 << "%\n";
+	//ì ë¶„
 	float a, b;
 	int N;
-	cout << "a¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	cout << "aë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> a;
-	cout << "b¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	cout << "bë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> b;
-	cout << "N¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+	cout << "Në¥¼ ìž…ë ¥í•˜ì„¸ìš”: ";
 	cin >> N;
-	anal = (1 / k) * (((k * b + c) * (log(k * b + c) - 1)) - ((k * a + c) * (log(k * a + c) - 1)));
+	anal = (1 / k) * (((k*b+c)*log(k*b+c))-(k*b)-((k*a+c)*log(k*a+c))+(k*a));
 	dt = (b - a) / N;
 	num = 0;
 	for (int i = 0; i < N; i++) {
 		num += log((k * (a + dt * i)) + c) * dt;
 	}
 	cout << "num: " << num << " anal: " << anal << endl;
-	cout << " error = " << (num - anal) / anal * 100 << "%\n";
+	cout << " error = " << abs(num - anal) / anal * 100 << "%\n";
 
 }
