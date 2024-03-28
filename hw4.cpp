@@ -20,9 +20,12 @@ int main() {
 		f5 = cos((2. * PI * 440 * t) + (3. * PI * 440 * t));
 
 		kang << t << "    " << (f1 * f2) - (f3 * f4);
+		kang << "   " << f1 * f2;
+		kang << "    " << f3 * f4;
 		kang << "   " << f5 << endl;
 	}
 
     kang.close();
     return 123;
 }
+
