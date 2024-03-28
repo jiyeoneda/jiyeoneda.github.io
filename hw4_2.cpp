@@ -20,6 +20,8 @@ int main() {
 		ff5 = sin((2. * PI * 440 * t) + (3. * PI * 440 * t));
 
 		kang2 << t << "    " << (ff1 * ff4) + (ff3 * ff2);
+		kang2 << "    " << ff1 * ff4;
+		kang2 << "    " << ff3 * ff2;
 		kang2 << "   " << ff5 << endl;
 	}
 
