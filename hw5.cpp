@@ -5,12 +5,12 @@ int main() {
 	int N = 2, M = 2;
 	float** A;
 	A = new float* [N];
-	for (int n = 0; n < N; n++) A[n] = new float[M](); //µ¿ÀûÀ¸·Î ÇÒ´çµÈ ¹è¿­ÀÇ °¢ ¿ä¼Ò¸¦ 0À¸·Î ÃÊ±âÈ­
+	for (int n = 0; n < N; n++) A[n] = new float[M](); //ë™ì ìœ¼ë¡œ í• ë‹¹ëœ ë°°ì—´ì˜ ê° ìš”ì†Œë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 	float** inverseA; 
 	inverseA = new float* [N];
 	for (int n = 0; n < N; n++) inverseA[n] = new float[M];
 
-	cout << "Çà·ÄÀÇ ¿ä¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä(2 X 2)"<< endl;
+	cout << "í–‰ë ¬ì˜ ìš”ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”(2 X 2)"<< endl;
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < M; j++) {
 			cout << "A[" << i << "][" << j << "]: ";
@@ -18,7 +18,7 @@ int main() {
 		}
 	}
 
-	cout << endl<< "ÀÔ·ÂµÈ Çà·Ä ¿ä¼Ò: ";
+	cout << endl<< "ì…ë ¥ëœ í–‰ë ¬ ìš”ì†Œ: ";
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < M; j++) {
 			cout << A[i][j] << " ";
@@ -30,7 +30,7 @@ int main() {
 	detA = A[0][0] * A[1][1] - A[0][1] * A[1][0];
 
 	if (detA == 0) {
-		cout << endl<<"Çà·Ä AÀÇ ¿ªÇà·ÄÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù." << endl;
+		cout << endl<<"í–‰ë ¬ Aì˜ ì—­í–‰ë ¬ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
 	}
 	else {
 		inverseA[0][0] = A[1][1] / detA;
@@ -38,7 +38,7 @@ int main() {
 		inverseA[1][0] = -A[1][0] / detA;
 		inverseA[1][1] = A[0][0] / detA;
 
-		cout << endl<< "¿ªÇà·Ä: ";
+		cout << endl<< "ì—­í–‰ë ¬: ";
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
 				cout << inverseA[i][j] << " ";
@@ -51,7 +51,7 @@ int main() {
 		delete[] A[n];
 		delete[] inverseA[n];
 	}
-	delete[] inverseA;
 	delete[] A;
+	delete[] inverseA;
 
 }
