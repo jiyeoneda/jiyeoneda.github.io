@@ -44,7 +44,7 @@ int main() {
 	yyy.read(header, sizeof(header));
 	yyy.close();
 
-	ofstream xx("mywave2.wav", ios::binary | ios::out);
+	ofstream xx("mywave3.wav", ios::binary | ios::out);
 	if (!xx) return 777;
 
 	unsigned short* nc, * bs;
