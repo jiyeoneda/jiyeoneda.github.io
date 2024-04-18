@@ -47,7 +47,7 @@ int main() {
 	for (int i = 0; i < 9; i++) {
 		cout << "\n"<< arr[i] << "\n";
 	}
-	streampos fileSize = xx.tellg(;
+	streampos fileSize = xx.tellg();
 	cout << "\n"<< "파일 크기 : " << fileSize << " 바이트" << endl;
 
 	xx.close();
