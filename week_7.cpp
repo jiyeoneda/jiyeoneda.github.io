@@ -24,7 +24,8 @@ void square(int n2, float * arr) {
 
 int main() {
 	srand(time(NULL));
-	float * arr = new float [11]; 
+	float * arr; 
+	arr = new float[11];
 	arr[0] = 1234;
 	int n1 = 5;
 	multi(n1,arr+1);
@@ -43,7 +44,7 @@ int main() {
 		cout << " File not found : " << "mybin.dat\n";
 		return 666;
 	}
-	xx.read((char*)arr, sizeof(float)*11);
+	xx.read((char*)arr, sizeof(float)*9);
 	for (int i = 0; i < 9; i++) {
 		cout << "\n"<< arr[i] << "\n";
 	}
