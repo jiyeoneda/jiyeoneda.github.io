@@ -37,14 +37,19 @@ int main() {
 	yy.write((char*)arr, sizeof(float) * 11);
 	yy.close();
 
-	cout << "---------ÆÄÀÏ ³»¿ë----------";
+	cout << "---------íŒŒì¼ ë‚´ìš©----------";
 	ifstream xx("mybin.dat", ios::binary | ios::in);
+	if (!xx) {
+		cout << " File not found : " << "mybin.dat\n";
+		return 666;
+	}
 	xx.read((char*)arr, sizeof(float)*11);
-	for (int i = 0; i <= sizeof(arr); i++) {
+	for (int i = 0; i < 9; i++) {
 		cout << "\n"<< arr[i] << "\n";
 	}
-	streampos fileSize = xx.tellg();
-	cout << "\n"<< "ÆÄÀÏ Å©±â : " << fileSize << " ¹ÙÀÌÆ®" << endl;
+	streampos fileSize = xx.tellg(;
+	cout << "\n"<< "íŒŒì¼ í¬ê¸° : " << fileSize << " ë°”ì´íŠ¸" << endl;
+
 	xx.close();
 	delete[] arr;
 	return 123;
